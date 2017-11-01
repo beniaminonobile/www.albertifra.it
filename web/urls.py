@@ -26,6 +26,7 @@ from django.views.generic import TemplateView
 
 
 urlpatterns = [
+    url(r'^boobs/', TemplateView.as_view(template_name='site/tits.html'), name="boobs"),
     url(r'^', TemplateView.as_view(template_name='site/home.html'), name="homepage"),
     # ADMIN URL
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
