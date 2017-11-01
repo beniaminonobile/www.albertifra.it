@@ -1,0 +1,3 @@
+
+
+$ cookiecutter --config-file $jmb/cookiecutters/django-project-cookiecutter/context.yaml $jmb/cookiecutters/django-project-cookiecutter

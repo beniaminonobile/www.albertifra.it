@@ -1,0 +1,9 @@
+Django
+ipdb==0.10.2
+ipython
+django-extensions
+django-debug-toolbar
+django-flat-responsive
+docutils
+dj-cmd
+psycopg2
