@@ -4,42 +4,46 @@
 	<head>
 		<meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
         <!-- Favicon -->
         <link rel="icon" href="{% static 'img/favicon-min.ico' %}">
 
         <!-- TITLE -->
-		<title>Francesca Alberti - Frontend developer</title>
+		<title>Francesca Alberti | .NET / FRONTEND DEVELOPER</title>
 
         <!-- META DESCRIPTION -->
-        <meta name="description" content="I'm Beniamino, full stack developer. I work with python and django. On frontend side i use bootstrap, angular, react"/>
+        <meta name="description" content="Frond-end web developer, programmatrice .net, metto passione e qualità in ogni mio lavoro"/>
 
         <!-- META KEYWORDS -->
-        <meta name="keywords" content="beniamino, nobile, full stack, developer,django, python, angular, angularjs, angular-js, react, bootstrap"/>
+        <meta name="keywords" content="alberti, francesca, front end, frontend, developer, .net, bootstrap, html, web design"/>
 
                 <!-- Open Graph data -->
-        <meta property="og:title" content='Beniamino Nobile - Full stack developer'>
+        <meta property="og:title" content='Francesca Alberti - Front-end web developer'>
         <meta property="og:type" content="website">
-        <meta property="og:url" content="http://www.beniaminonobile.me">
-        <meta property="og:description" content="I'm Beniamino, full stack developer. I work with python and django. On frontend side i use bootstrap, angular, react" />
-        <meta property="og:site_name" content="Beniamino Nobile - Full stack developer" />
-        <meta property="og:image" content="http://www.beniaminonobile.me/static/img/home-background.jpeg">
+        <meta property="og:url" content="http://www.albertifra.it">
+        <meta property="og:description" content="Frond-end web developer, programmatrice .net, metto passione e qualità in ogni mio lavoro" />
+        <meta property="og:site_name" content="Francesca Alberti - Front-end web developer" />
+        <meta property="og:image" content="http://www.albertifra.it/static/img/pic02.jpg">
 
         <!-- Schema.org markup for Google+ -->
-        <meta itemprop="name" content='Beniamino Nobile - Full stack developer'>
-        <meta itemprop="description" content="I'm Beniamino, full stack developer. I work with python and django. On frontend side i use bootstrap, angular, react">
+        <meta itemprop="name" content='Francesca Alberti - Front-end web developer'>
+        <meta itemprop="description" content="Frond-end web developer, programmatrice .net, metto passione e qualità in ogni mio lavoro">
 
         <!-- Twitter Card data -->
-        <meta name="twitter:site" content="Beniamino Nobile - Full stack developer">
-        <meta name="twitter:title" content='Beniamino Nobile - Full stack developer'>
-        <meta name="twitter:description" content="I'm Beniamino, full stack developer. I work with python and django. On frontend side i use bootstrap, angular, react">
-        <meta name="twitter:creator" content="@beniaminonobile">
+        <meta name="twitter:site" content="Francesca Alberti - Front-end web developer">
+        <meta name="twitter:title" content='Francesca Alberti - Front-end web developer'>
+        <meta name="twitter:description" content="Frond-end web developer, programmatrice .net, metto passione e qualità in ogni mio lavoro">
+        <meta name="twitter:creator" content="@albertifra">
         <!-- Twitter summary card with large image must be at least 280x150px -->
 
 
         <!-- Bootstrap CSS -->
-        <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+        <!--[if lte IE 8]><script src="/static/js/ie/html5shiv.js"></script><![endif]-->
+        <link rel="stylesheet" href="/static/css/main.css" />
+        <link href="/static/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
+        <!--[if lte IE 8]><link rel="stylesheet" href="/static/css/ie8.css" /><![endif]-->
+        <!--[if lte IE 9]><link rel="stylesheet" href="/static/css/ie9.css" /><![endif]-->
 
 
 
@@ -50,12 +54,12 @@
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
           })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-          ga('create', 'codice', 'auto');
+          ga('create', 'UA-109236821-1', 'auto');
           ga('send', 'pageview');
 
         </script>
 	</head>
-	<body style="overflow:hidden;">
+	<body>
 
         {% block spinner %}
         <div id="preloader">
@@ -68,7 +72,67 @@
         {% endblock content %}
 
         {% block js %}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Scripts -->
+        <script src="/static/js/jquery.min.js "></script>
+        <script src="/static/js/jquery.scrollex.min.js "></script>
+        <script src="/static/js/jquery.scrolly.min.js "></script>
+        <script src="/static/js/skel.min.js "></script>
+        <script src="/static/js/util.js "></script>
+        <!--[if lte IE 8]><script src="/static/js/ie/respond.min.js "></script><![endif]-->
+        <script src="/static/js/main.js "></script>
+        <script src="/static/js/jquery.circliful.min.js "></script>
+
+
+        <script>
+        $(document).ready(function() {
+
+            var eventTriggered = false;
+            objectPositionTop = $('#skills').offset().top - 100;
+
+            $(window).on('scroll', function() {
+
+                var currentPosition = document.scrollingElement.scrollTop;
+                if (currentPosition > objectPositionTop && eventTriggered == false) {
+                    eventTriggered = true;
+                    // your code
+
+                    var arrayOfIds = $.map($(".skill"), function(n, i) {
+                        return n.id;
+                    });
+
+                    for (ind = 0; ind < arrayOfIds.length; ind++) {
+                        $("#" + arrayOfIds[ind]).circliful({
+                            animationStep: 3,
+                            foregroundBorderWidth: 10,
+                            backgroundBorderWidth: 9,
+                            percentageTextSize: 15,
+                            iconPosition: 'top',
+                            iconColor: '#75A99D',
+                            progressColor: {
+                                0: '#9EE6D5',
+                                20: '#96D9C9',
+                                40: '#8DCCBD',
+                                60: '#84BFB1',
+                                80: '#7BB3A6',
+                                100: '#75A99D'
+                            }
+
+
+
+                        });
+                        $("#" + arrayOfIds[ind]).toggleClass("skills-start");
+                    }
+                    // // html5
+                    // $("#test-circle").circliful({
+                    //     icon: 'f13b'
+
+                    // });
+
+                }
+
+            });
+        });
+        </script>
         {% endblock js %}
 	</body>
 </html>

@@ -21,12 +21,14 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
-
-
+from . import views
 
 
 urlpatterns = [
-    url(r'^boobs/', TemplateView.as_view(template_name='site/tits.html'), name="boobs"),
+    url(r'^sitemap.xml$', TemplateView.as_view(template_name='sitemap.xml', content_type='text/xml')),
+    url(r'^robots.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
+    url(r'^send_email/$', views.SendEmailView.as_view(), name="send_email", ),
+    # url(r'^boobs/', TemplateView.as_view(template_name='site/tits.html'), name="boobs"),
     url(r'^', TemplateView.as_view(template_name='site/home.html'), name="homepage"),
     # ADMIN URL
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
