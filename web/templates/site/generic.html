@@ -89,7 +89,7 @@
             var eventTriggered = false;
             objectPositionTop = $('#skills').offset().top - 100;
 
-            $(window).on('scroll', function() {
+            $(window).scroll(function(event){
 
                 var currentPosition = $(this).scrollTop();
                 if (currentPosition > objectPositionTop && eventTriggered == false) {
