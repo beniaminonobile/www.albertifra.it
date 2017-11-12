@@ -91,7 +91,7 @@
 
             $(window).on('scroll', function() {
 
-                var currentPosition = document.scrollingElement.scrollTop;
+                var currentPosition = $(this).scrollTop();
                 if (currentPosition > objectPositionTop && eventTriggered == false) {
                     eventTriggered = true;
                     // your code
