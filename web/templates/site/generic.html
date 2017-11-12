@@ -88,8 +88,12 @@
 
             var eventTriggered = false;
             objectPositionTop = $('#skills').offset().top - 100;
-
-            $(window).scroll(function(event){
+            if (skel.vars.mobile) {
+                $wrapper = $('#wrapper');
+            } else {
+                $wrapper = $(window);
+            }
+            $wrapper.bind('scroll', function(){
 
                 var currentPosition = $(this).scrollTop();
                 if (currentPosition > objectPositionTop && eventTriggered == false) {
